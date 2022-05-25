@@ -1,6 +1,7 @@
 import React,{useState} from 'react'
 import './Login.css'
-import Registration from './Registration.js';
+// import Registration from './Registration.js';
+import { Link } from 'react-router-dom';
 function Login() {
     const[email,setEmail]=useState("");
     const[password,setPassword]=useState("");
@@ -35,8 +36,15 @@ function Login() {
             <span className='material-icons'>lock</span>
             <input type="text" placeholder='Email' value={email} onChange={onemailChange}/>
             <input type="password" placeholder='Password'  value={password} onChange={onpasswordChange}/>
+            <Link to="/Login">
             <button type="submit">Login</button><br></br>
-            {/* <button  type="submit"className='wix'>Sign Up</button> */}
+            </Link>
+            <div className='user'>
+            <Link to="/registration">
+            <button  type="submit">Sign Up</button>
+            </Link>
+            </div>
+            
          </form>
 
          </div>
@@ -52,7 +60,7 @@ function Login() {
        </div>
        )
    })}
-   <Registration />
+   {/* <Registration /> */}
        </div>
        </>
          

@@ -4,7 +4,7 @@ import './Registration.css';
 
 const Registration = () => {
   return (
-    <div>
+    <div className='test'>
     <form>
         <div className='main'>
             <div className='reg'>
@@ -25,7 +25,9 @@ const Registration = () => {
     
         <div className='btn'>
         <div className='btn1'>
+        <Link to="/Login">
                     <button>Register</button>
+                    </Link>
                 </div>
                 <div className='btn2'>
                 <Link to="/Login">

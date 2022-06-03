@@ -1,9 +1,8 @@
-import React,{useState} from 'react'
-import './Login.css'
-// import Registration from './Registration.js';
-import { Link } from 'react-router-dom';
-function Login() {
-    const[email,setEmail]=useState("");
+import React from 'react'
+// import "./style.css";
+import { useState } from 'react';
+const Login = () => {
+         const[email,setEmail]=useState("");
     const[password,setPassword]=useState("");
 
     const [allNewEntry,setNewEntry]=useState([]);
@@ -27,7 +26,6 @@ function Login() {
         setPassword("");
 
     }
-
     return (
         <>
          <div className ="login">
@@ -36,13 +34,15 @@ function Login() {
             <span className='material-icons'>lock</span>
             <input type="text" placeholder='Email' value={email} onChange={onemailChange}/>
             <input type="password" placeholder='Password'  value={password} onChange={onpasswordChange}/>
-            <Link to="/Login">
+            <div className='one'>
+            {/* <Link to="/Login"> */}
             <button type="submit">Login</button><br></br>
-            </Link>
+            {/* </Link> */}
+            </div>
             <div className='user'>
-            <Link to="/registration">
+            {/* <Link to="/registration"> */}
             <button  type="submit">Sign Up</button>
-            </Link>
+            {/* </Link> */}
             </div>
             
          </form>
@@ -60,12 +60,12 @@ function Login() {
        </div>
        )
    })}
-   {/* <Registration /> */}
-       </div>
-       </>
-         
-      
 
-    );
-};
-export default Login;
+
+
+    </div>
+    </>
+  )
+}
+
+export default Login

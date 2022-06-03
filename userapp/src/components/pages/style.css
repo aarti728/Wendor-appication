@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&family=Fjalla+One&family=League+Gothic&family=PT+Sans+Narrow:wght@700&family=Roboto+Condensed:wght@300&family=Stint+Ultra+Condensed&family=Teko:wght@300;500&family=Yanone+Kaffeesatz:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Bangers&family=Comfortaa:wght@300&family=Dancing+Script:wght@400;500&family=Fjalla+One&family=Grape+Nuts&family=League+Gothic&family=Lobster&family=Oswald:wght@600&family=PT+Sans+Narrow:wght@700&family=Pacifico&family=Roboto+Condensed:wght@300&family=Satisfy&family=Stint+Ultra+Condensed&family=Teko:wght@300;500&family=Ubuntu&family=Varela+Round&family=Yanone+Kaffeesatz:wght@700&display=swap');
+
+body{
+    background:linear-gradient(90deg,#4b6cb7 0%,#182848 100%);
+}
+.login{
+    width: 380px;
+    padding: 8% 0 0;
+    margin: auto;
+    font-family: 'comfortaa',cursive;
+    text-align: center;
+    margin-top: 2%;
+    height: 400px;
+    
+}
+.form{
+    position: relative;
+    z-index: 1;
+    background-color: #ffffff;
+    border-radius: 10px;
+    max-width: 360px;
+    margin: 0 auto 100px;
+    padding: 45px;
+    text-align: center;
+    height: 450px;
+}
+.form input{
+    outline: 0;
+    background: #f2f2f2;
+    width: 100%;
+    border: 0;
+    border-radius: 5px;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+    font-family:'comfortaa' cursive;
+
+}
+.form input:focus{
+    background: #dbdbbd;
+
+}
+.form button{
+    font-family: "comfortaa",cursive;
+    text-transform: uppercase;
+    outline: 0;
+    background: #4b6cb7;
+    width: 100%;
+    border: 0;
+    border-radius: 5px;
+    padding: 15px;
+    color: #ffffff;
+    font-size: 14px;
+    -webkit-transition: all 0,3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
+}
+.form button :active{
+    background: #395591;
+}
+.form button:hover{
+    background-color: rgb(46, 46, 241);
+}
+.form span{
+    font-size: 75px;
+    color: #4b6cb7;
+}
+.main{
+    color: white;
+    margin: 0% 35%;
+}
+.one button{
+    /* width: 100px; */
+    /* height: 30px;
+    text-align: center; */
+}
+.user button{
+    margin-top: 4%;
+    /* width: 100px;
+    height: 30px; */
+}
+.user button:hover{
+    background-color: rgb(46, 46, 241);
+}
+nav{
+    float: right;
+    text-align: right;
+    background-color: rgb(98, 97, 100);
+    width: 100%;
+    height: 10vh;
+    margin-top: -5%;
+}
+.yuvi{
+    /* float: right; */
+    padding-right: 2%;
+
+}
+.yuvi a{margin: 5% 5%;}    
+.yuvi button{margin: 2% 0.8%;border: none;background-color: transparent;font-size: 1.5rem;cursor: pointer;color: white;}
+
+.test{
+    background-color:linear-gradient(90deg,#4b6cb7 0%,#182848 100%);
+}
+
+.main{
+    
+    position:fixed;
+    
+}
+.reg{
+    height: 74vh;
+    width: 35vw;
+    margin-top: 25%;
+    background-color: #ffffff;
+    border-radius: 10px;
+} 
+h2{
+    text-align: center;
+    font-size: 4rem;
+    font-weight: 400;
+   
+    color: #4b6cb7;
+    font-family: 'Pacifico', cursive;
+}
+h2:hover{
+    color: rgb(46, 46, 164);
+}
+.typ input {
+height:5vh;
+width:28vw;
+text-align: left;
+margin-left: 10%;
+margin-top: 2%;
+padding-left: 2%;
+background-color: lightgray;
+border: none;
+font-size: 15px;
+font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.typ input:hover{
+    background-color: rgb(161, 155, 155);
+    color: black;
+}
+
+.man input{
+    height:5vh;
+    width:28vw;
+    text-align: left;
+    margin-left: 10%;
+    margin-top: 2%;
+    background-color: lightgray;
+    border: none;
+    font-size: 14px;
+font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+}
+.man input:hover{
+    background-color: rgb(161, 155, 155);
+    color: black;
+}
+.btn1 button{
+    height: 5vh;
+    width :28vw;
+    margin-top: 2%;
+    margin-left: 10%;
+    background-color: #4b6cb7;
+    border: none;
+    font-size: 14px;
+font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+cursor: pointer;
+
+}
+.btn1 button:hover{
+    background-color: rgb(62, 62, 232);
+    color: black;
+}
+.btn2 button{
+    height: 5vh;
+    width :28vw;
+    margin-top: 2%;
+    margin-left: 10%;
+    border: none;
+    font-size: 14px;
+font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+background-color: lightgray;
+
+}
+.btn2 button:hover{
+    background-color: rgb(161, 155, 155);
+    color: black;
+}
+.print{
+    cursor: pointer;
+    color: #133d9f;
+}
+

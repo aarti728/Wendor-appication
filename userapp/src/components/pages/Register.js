@@ -1,10 +1,10 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import './Registration.css';
+import React from 'react'
+// import "./style.css";
 
-const Registration = () => {
+const Register = () => {
   return (
-    <div className='test'>
+    <div>
+<div className='test'background='linear-gradient(90deg,#4b6cb7 0%,#182848 100%)'>
     <form>
         <div className='main'>
             <div className='reg'>
@@ -25,21 +25,24 @@ const Registration = () => {
     
         <div className='btn'>
         <div className='btn1'>
-        <Link to="/Login">
+        {/* <Link to="/Login"> */}
                     <button>Register</button>
-                    </Link>
+                    {/* </Link> */}
                 </div>
                 <div className='btn2'>
-                <Link to="/Login">
+                {/* <Link to="/Login"> */}
                     <button>Already have an account <span className='print'>/Sign In</span></button>
-                    </Link>
+                    {/* </Link> */}
                 </div>
                 </div>
                 </div>
                 </div>
         </form>
     </div>
+  
+</div>
   )
 }
 
-export default Registration;
+
+export default Register

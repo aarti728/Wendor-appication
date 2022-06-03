@@ -1,32 +1,13 @@
 import React from "react";
-import './components/pages/Login.css';
-import "./App.css";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import "./components/pages/style.css";
 import Login from "./components/pages/Login";
-import Registration from "./components/pages/Registration";
-import Home from "./Home";
-
+import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+// import Register from "./components/pages/Register";
 function App() {
   return (
     <>
-      <Router>
-        <nav >
-          <Link to ='/' className='yuvi'><button>Home</button></Link>
-          <Link to="/Login" className="yuvi">
-            <button>Login</button>
-          </Link>
-          <Link to="/Registration" className="yuvi">
-            <button>Registration</button>
-          </Link>
-          </nav>
-      
-
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/Login" element={<Login />} />
-          <Route path="/Registration" element={<Registration />} />
-        </Routes>
-      </Router>
+     {/* <Register/> */}
+     <Login/>
     </>
   );
 }

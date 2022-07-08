@@ -4,6 +4,8 @@ import ImageListItem from '@mui/material/ImageListItem';
 import { Link } from 'react-router-dom';
 import { Button } from '@mui/material';
 import TitlebarBelowImageList from './NewList';
+import { AppBar } from '@mui/material';
+
 
 export default function StandardImageList() {
   return (
@@ -12,6 +14,8 @@ export default function StandardImageList() {
 <Link to="/NewList">
   <Button color='inherit'>Add New Products</Button>
   </Link>
+  <AppBar/>
+ 
 </div>
     <ImageList sx={{ width: 1000, height: 1000, marginLeft:32, marginTop:7, }} cols={3} rowHeight={164}>
       {itemData.map((item) => (
@@ -22,6 +26,7 @@ export default function StandardImageList() {
             alt={item.title}
             loading="lazy"
           />
+
         </ImageListItem>
       ))}
     </ImageList>

@@ -1,10 +1,21 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import "./profile.css";
+import {toast} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
+import { ToastContainer } from 'react-toastify';
+
+   
+
+const handleProfile=()=>{
+  toast("Updated Successfully")
+ }
 const Profile = () => {
   var [user, setuser] = useState({});
+  
 
   let navigate = useNavigate();
 
@@ -20,8 +31,9 @@ function getData(e) {
   }
   const Submit = async () => {
     try {
-      let response = await axios.post(
+      let response = await axios.get(
         "https://loanprojectapi.herokuapp.com/api/profile",
+        
         user
       );
 
@@ -40,6 +52,7 @@ function getData(e) {
 
   const getPofileDetails = async () => {
     try {
+    
       let config = {
         headers: {
           "x-access-token": localStorage.getItem("userToken"),
@@ -51,7 +64,7 @@ function getData(e) {
       );
 
       if (response.data.success) {
-		setuser(response.data.data)
+		  setuser(response.data.data)
       } else {
       }
       console.log("fetch data");
@@ -65,18 +78,48 @@ function getData(e) {
     getPofileDetails();
   }, []);
 
+
+  const updateProfile = async () => {
+    
+    try {
+      let config = {
+        headers: {
+          "x-access-token": localStorage.getItem("userToken"),
+        },
+      };
+	  
+      let response = await axios.put(
+        "https://loanprojectapi.herokuapp.com/api/profile",
+		user,
+		config
+        
+      );
+      if (response.data.success) {
+		// setuser(response.data.data)
+      } else {
+      }
+      console.log("fetch  updated data");
+	  
+      console.log(response, "user  updated data response");
+    } catch (err) {
+      console.log("fetch error", err);
+    }
+  };
+
   return (
- <div className="container">
+	<>
+
+ <div className="container" style={{marginLeft:"5%"}}>
       <div className="row gutters">
         <div className="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
-          <div className="card h-100">
+          <div className="card h-100" style={{marginLeft:"-95%"}}>
             <div className="card-body">
               <div clasNames="account-settings">
                 <div className="user-profile">
                   <div className="user-avatar">
                     <img
                       src="https://cdn2.vectorstock.com/i/1000x1000/20/76/man-avatar-profile-vector-21372076.jpg"
-                      style={{ height: "26vh", width: "15vw" }}
+                      style={{ height: "26vh", width: "15vw",marginLeft:"-10%"}}
                       alt="Maxwell Admin"
                     />
                   </div>
@@ -140,6 +183,7 @@ function getData(e) {
                         fontSize: "18px",
                         marginTop: "15%",
                         fontFamily: "monospace",
+                        marginLeft: "-30%",
                       }}
                     >
                       First Name
@@ -152,7 +196,8 @@ function getData(e) {
                       placeholder="Enter your First Name"
                       style={{ marginTop: "5%" }}
                       onChange={getData}
-					  defaultValue={user.firstName}
+					            defaultValue={user ? user.firstName : null}
+                     
                     />
                   </div>
                 </div>
@@ -165,7 +210,7 @@ function getData(e) {
                         fontSize: "18px",
                         marginTop: "15%",
                         fontFamily: "monospace",
-                        marginLeft: "5%",
+                        marginLeft: "-30%",
                       }}
                     >
                       Last Name
@@ -178,7 +223,7 @@ function getData(e) {
                       placeholder="Enter your Last Name"
                       style={{ marginTop: "5%" }}
                       onChange={getData}
-					  defaultValue={user.lastName}
+					            defaultValue={user? user.lastName : null}
 					
                     />
                   </div>
@@ -192,6 +237,8 @@ function getData(e) {
                         fontSize: "18px",
                         marginTop: "5%",
                         fontFamily: "monospace",
+                        marginLeft: "-30%",
+                        
                       }}
                     >
                       Email
@@ -204,7 +251,7 @@ function getData(e) {
                       name="email"
                       style={{ marginTop: "5%" }}
                       onChange={getData}
-					  defaultValue={user.email}
+					         defaultValue={user ? user.email :null}
 					
                     />
                   </div>
@@ -218,7 +265,8 @@ function getData(e) {
                         fontSize: "18px",
                         marginTop: "5%",
                         fontFamily: "monospace",
-                        marginLeft: "5%",
+                        // marginLeft: "5%",
+                        marginLeft: "-30%",
                       }}
                     >
                       Mobile
@@ -231,7 +279,7 @@ function getData(e) {
                       name="email"
                       style={{ marginTop: "5%" }}
                       onChange={getData}
-					  defaultValue={user.mobile}
+					           defaultValue={user ? user.mobile:null}
 					
                     />
                   </div>
@@ -245,6 +293,7 @@ function getData(e) {
                         fontSize: "18px",
                         marginTop: "5%",
                         fontFamily: "monospace",
+                        marginLeft: "-40%",
                       }}
                     >
                       City
@@ -257,7 +306,7 @@ function getData(e) {
                       name="city"
                       style={{ marginTop: "5%" }}
                       onChange={getData}
-					  defaultValue={user.city}
+					          defaultValue={user? user.city:null}
 					
                     />
                   </div>
@@ -284,16 +333,22 @@ function getData(e) {
                     >
                       Cancel
                     </button>
+                    <Link to='/profile' >
+                   
                     <button
                       type="button"
                       id="submit"
                       name="submit"
                       className="btn btn-primary"
                       style={{ marginTop: "8%", height: "6vh", width: "9vw" }}
-                      onClick={Submit}
+                      onClick={updateProfile }
+                      onDoubleClick={handleProfile}
+                      
                     >
-                      Update
+                      Submit
                     </button>
+                    <ToastContainer/>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -302,6 +357,7 @@ function getData(e) {
         </div>
       </div>
     </div>
+	</>
   );
 };
 export default Profile;

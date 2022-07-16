@@ -2,8 +2,14 @@ import React, {useState} from 'react'
 import {Link, useNavigate } from 'react-router-dom'
 import axios from 'axios';
 import './Register.css';
+import {toast} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
+import { ToastContainer } from 'react-toastify';
 
+const handleMsg=()=>{
+    toast("Registered Successfully")
+   }
 const Register = () => {
 var [user, setuser] = useState("");
 let navigate = useNavigate();
@@ -61,8 +67,9 @@ let navigate = useNavigate();
     
         <div className='btn'>
         <div className='btn1'>
-        <Link to="/register">
-                    <button onClick={register}>Register</button>
+        <Link to="/register" onClick={register}>
+                    <button  onClick={handleMsg}>Register</button>
+                    <ToastContainer/>
                     </Link>
                     
                 </div>
